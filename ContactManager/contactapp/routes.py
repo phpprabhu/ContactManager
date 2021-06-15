@@ -13,6 +13,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 
 library_books = []
 
+#Home comment
 @app.route('/')
 @app.route('/home')
 def home():
