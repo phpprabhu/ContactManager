@@ -11,6 +11,10 @@ from contactapp.forms.register import RegisterationForm
 from PIL import Image
 from flask_login import login_user, current_user, logout_user, login_required
 
+
+# this is inserted by murali
+
+
 library_books = []
 
 @app.route('/')
