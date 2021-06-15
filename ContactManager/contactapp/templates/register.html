@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!--Form HTML-->
+<!--<label>Name</label>-->
+<!--<input type="text" name="name" class="smoothborder" placeholder="Your name *"/>-->
+<div>
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.username.label() }}
+    {{ form.username(class="smoothborder text-width") }}
+    {% if form.username.errors %}
+        {% for error in form.username.errors %}
+            <div class="danger">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+    {{ form.password.label() }}
+    {{ form.password(class="smoothborder text-width") }}
+    {% if form.password.errors %}
+        {% for error in form.password.errors %}
+            <span class="danger">{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+    {{ form.confirm_password.label() }}
+    {{ form.confirm_password(class="smoothborder text-width") }}
+    {% if form.confirm_password.errors %}
+        {% for error in form.confirm_password.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+    {{ form.subscribe() }}
+    {{ form.subscribe.label() }}
+    {{ form.submit(class="btn btn-info") }}
+</form>
+    </div>
+{% endblock %}

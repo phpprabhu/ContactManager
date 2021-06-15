@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.book_name.label() }}
+    {{ form.book_name(class="smoothborder text-width") }}
+    {% if form.book_name.errors %}
+        {% for error in form.book_name.errors %}
+            <div class="danger">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+    {{ form.book_author.label() }}
+    {{ form.book_author(class="smoothborder text-width") }}
+    {% if form.book_author.errors %}
+        {% for error in form.book_author.errors %}
+            <span class="danger">{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+    {{ form.submit(class="btn btn-info") }}
+</form>
+    </div>
+{% endblock %}

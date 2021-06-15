@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    <img src="{{ url_for('static', filename='images/profile_images/' + current_user.profile_image ) }}" />
+<form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.username.label() }}
+    {{ form.username(class="smoothborder text-width") }}
+    {% if form.username.errors %}
+        {% for error in form.username.errors %}
+            <div class="danger">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+
+    {{ form.profile_picture.label() }}
+    {{ form.profile_picture(class="") }}
+    {{ form.profile_picture.errors }}
+    {% if form.profile_picture.errors %}
+        {% for error in form.profile_picture.errors %}
+            <div class="danger">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+</br></br>
+    {{ form.submit(class="btn btn-info") }}
+</form>
+    </div>
+{{ form }}
+{% endblock %}

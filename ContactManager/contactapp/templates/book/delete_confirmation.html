@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+Do you want to delete "{{ book.name }}"?
+
+<a href="{{ url_for('delete_book', book_id=book.id) }}">Yes</a>
+
+<a href="{{ url_for('book_manager') }}">No</a>
+{% endblock %}

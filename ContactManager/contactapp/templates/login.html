@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="post">
+    {{ form.hidden_tag() }}
+
+    {{ form.username.label() }}
+    {{ form.username() }}
+    {% for error in form.username.errors %}
+        {{ error }}
+    {% endfor %}
+
+    {{ form.password.label() }}
+    {{ form.password() }}
+    {% for error in form.password.errors %}
+        {{ error }}
+    {% endfor %}
+
+    {{ form.remember_me() }}
+    {{ form.remember_me.label() }}
+
+    {{ form.submit() }}
+
+</form>
+Login Content
+{% endblock %}
