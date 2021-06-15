@@ -68,6 +68,8 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+#this route is edited by praveen
+
 
 @app.route('/account', methods=['GET', 'POST'])
 @login_required
